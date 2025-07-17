@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.custom-dashboard-heading {
+    color: #841A26; 
+    font-family: 'neuton';
+    box-shadow: none;
+    font-size: 30px;
+}

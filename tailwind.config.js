@@ -13,6 +13,8 @@ export default {
         extend: {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                neuton: ['Neuton', 'serif'],
+                nokora: ['Nokora', 'serif']
             },
         },
     },
