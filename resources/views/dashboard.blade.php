@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-neuton font-[400] text-3xl leading-tight border-right: 2px solid #841A26">
+        <h2 class="pt-6 pb-2 font-neuton font-[400] text-3xl leading-tight border-b-2 border-[#841A26]">
             {{ __('Gallery') }}
         </h2>
     </x-slot>
