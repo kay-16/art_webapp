@@ -5,45 +5,122 @@
         </h2>
     </x-slot>  
 
-    <!-- Title input field -->
-    <div class="mb-6 flex justify-center"> <!--to center the input field itself-->
+    
+    <div class="mb-6 flex justify-center">
         <div class="flex flex-col items-center w-full">
-            <label for="title" class="pt-6 pb-2 text-center tracking-widest font-nokora text-[#841A26] leading-tight font-bold uppercase block text-sm mb-1">
+
+        <!-- Title input field -->
+            <label for="title" class="mr-[600px] pt-10 text-center tracking-widest font-nokora text-[#841A26] leading-tight font-bold uppercase text-sm">
                 Title <span class="text-[#841A26]">*</span>
             </label>
         
             <input 
-                id="title"
-                name="title"
                 type="text"
-                class="place-content-center w-1/2 bg-transparent border-b border-[#841A26] text-[#841A26] focus:outline-none focus:border-b-2 focus:border-[#841A26] placeholder:text-[#841A26]/50"
-                placeholder="Enter Title"
-            >
+                class="place-content-center w-1/2 custom-border custom-border:focus text-[#841A26] focus:outline-none placeholder:text-[#841A26]/50 font-neuton"
+                placeholder="Enter art title"
+            />
 
-            <p class="text-sm text-[#841A26] bg-[#EAD8B4] px-3 py-1 mt-2 inline-block">
+            <p class="text-md text-[#841A26] bg-[#EAD8B4] px-3 py-1 mt-2 inline-block font-neuton" >
                 This field is required.
             </p>
         </div>
     </div>
 
-    <!-- Dropdown -->
-    <div>
-        <label for="price" class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 pt-6 pb-2 tracking-widest font-nokora text-[#841A26] leading-tight font-[700] block text-sm/6">TYPE</label>
-        <div class="mt-2">
-            <div class="flex items-center rounded-md bg-white pl-3 outline-1 -outline-offset-1 outline-gray-300 has-[input:focus-within]:outline-2 has-[input:focus-within]:-outline-offset-2 has-[input:focus-within]:outline-indigo-600">
-            <div class="shrink-0 text-base text-gray-500 select-none sm:text-sm/6">$</div>
-            <input id="price" type="text" name="price" placeholder="0.00" class="block min-w-0 grow py-1.5 pr-3 pl-1 text-base text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6" />
-            <div class="grid shrink-0 grid-cols-1 focus-within:relative">
-                <select id="currency" name="currency" aria-label="Currency" class="col-start-1 row-start-1 w-full appearance-none rounded-md py-1.5 pr-7 pl-3 text-base text-gray-500 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
-                <option>USD</option>
-                <option>CAD</option>
-                <option>EUR</option>
-                </select>
-                <svg viewBox="0 0 16 16" fill="currentColor" data-slot="icon" aria-hidden="true" class="pointer-events-none col-start-1 row-start-1 mr-2 size-5 self-center justify-self-end text-gray-500 sm:size-4">
-                <path d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" fill-rule="evenodd" />
-                </svg>
+    <!-- Input Field Adjacent Container -->
+    <div class="flex justify-center">
+        <div class="flex space-x-[200px] max-w-8xl w-full px-10"> <!-- Adjust Dri --> 
+        
+            <!-- Dropdown -->
+            <div class="flex flex-col w-1/2 relative">
+                <label for="art-type" class="tracking-widest font-nokora text-[#841A26] uppercase leading-tight font-[700] block text-sm mb-1">
+                    Type <span class="text-[#841A26]">*</span>
+                </label>
+
+                <select 
+                    id="art-type" 
+                    name="art-type" 
+                    placeholder="Art Type" 
+                    class="appearance-none w-full border-0 border-b border-[#841A26] bg-transparent py-1.5 pl-3 pr-10 text-base text-[#841A26] placeholder:text-[#841A26]/50 font-neuton focus:outline-none focus:ring-0" 
+                >
+                    <option>oil painting</option>
+                    <option>acrylic painting</option>
+                    <option>watercolor painting</option>
+                    <option>coffee painting</option>
+                    <option>sketch</option>
+                </select>    
+
+                <!-- Dropdown Arrow -->
+                <!-- <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
+                    <svg class="h-4 w-4 text-[#841A26]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7l3 3 3-3" />
+                    </svg>
+                </div> -->
+
+                <!-- Error Message -->
+                <p class="inline-block text-md text-[#841A26] bg-[#EAD8B4] px-3 py-1 mt-2 font-neuton">
+                    This field is required.
+                </p>
             </div>
+
+            <!-- Medium Input Text Field  -->
+            <div class="flex flex-col w-1/2">
+                <label for="medium" class="tracking-widest font-nokora text-[#841A26] leading-tight font-bold uppercase text-sm mb-1 text-left">
+                    Medium
+                </label>
+
+                <input 
+                    type="text"
+                    id="medium"
+                    name="medium"
+                    class="appearance-none w-full border-0 border-b border-[#841A26] bg-transparent text-[#841A26] focus:outline-none focus:border-[#841A26] placeholder:text-[#841A26]/50 font-neuton"
+                    placeholder="Enter art medium"
+                />
             </div>
+
         </div>
     </div>
+
+    <!-- Input Field Adjacent Container -->
+    <div class="flex justify-center">
+        <div class="flex space-x-[100px] max-w-8xl w-full px-10"> <!-- Adjust Dri --> 
+        
+            <!-- Year input field -->
+            <div class="flex flex-col w-1/2 relative">
+                <label for="Year" class="tracking-widest font-nokora text-[#841A26] leading-tight font-bold uppercase text-sm">
+                    Year Created<span class="text-[#841A26]">*</span>
+                </label>
+            
+                <input 
+                    type="text"
+                    class="place-content-center w-1/2 custom-border custom-border:focus text-[#841A26] focus:outline-none placeholder:text-[#841A26]/50 font-neuton"
+                    placeholder="Enter year created"
+                />
+
+                <p class="text-md text-[#841A26] bg-[#EAD8B4] px-3 py-1 mt-2 inline-block font-neuton" >
+                    This field is required.
+                </p>
+            </div>
+
+            <!-- Tags Input Text Field  -->
+            <div class="flex flex-col w-1/2">
+                <label for="Tags" class="tracking-widest font-nokora text-[#841A26] leading-tight font-bold text-sm mb-1 text-left">
+                    Tags (comma-separated)
+                </label>
+
+                <input 
+                    type="text"
+                    id="Tags"
+                    name="Tags"
+                    class="appearance-none w-full border-0 border-b border-[#841A26] bg-transparent text-[#841A26] focus:outline-none focus:border-[#841A26] placeholder:text-[#841A26]/50 font-neuton"
+                    placeholder="Enter art tags"
+                />
+            </div>
+
+        </div>
+    </div>
+
 </x-app-layout>
+
+
+
+
