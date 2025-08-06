@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="pt-6 pb-2 font-neuton font-[400] text-3xl leading-tight border-b-2 border-[#841A26]">
-            {{ __('Gallery') }}
+            {{ $user->username }}'s Gallery
         </h2>
     </x-slot>
 

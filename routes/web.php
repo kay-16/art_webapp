@@ -7,8 +7,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/profile/{user}', [ProfileController::class, 'show']);
+
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('dashboard', ['user' => Auth::user()]);
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
