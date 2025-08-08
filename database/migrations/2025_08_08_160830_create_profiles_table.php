@@ -12,8 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('profiles', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
+            $table->unsignedBigInteger('user_id'); // To connect to the 'User' or reference a user using their ID
+            $table->text('bio')->nullable(); // nullable = optional or not required
+            $table->string('url')->nullable(); 
             $table->timestamps();
+            
+            $table->index('user_id'); // adds index or 'shortcut' for better searchability
         });
     }
 
