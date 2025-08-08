@@ -2,7 +2,7 @@
 
 @php
 $classes = ($active ?? false)
-            ? 'font-neuton font-[300] text-white items-center text-xl'
+            ? 'font-neuton font-[300] text-white items-center text-xs'
             : 'font-neuton font-[300] text-white items-center text-xl inline-flex border-transparent hover:text-gray-400 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out';
 @endphp
 
