@@ -18,7 +18,7 @@ class ProfileController extends Controller
     public function show($user): View
     {
 
-        $user = User::find($user);  // User = class from models User.php
+        $user = User::findOrFail($user);  // User = class from models User.php
 
         return view('dashboard', [
             'user' => $user         // user ang variable nga i-use to display data in views (dashboard.blade.php)
