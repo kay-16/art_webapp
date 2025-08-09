@@ -3,11 +3,13 @@
         <h2 class="pt-6 pb-2 font-neuton font-[400] text-3xl leading-tight border-b-2 border-[#841A26]">
             {{ $user->username }}'s Gallery
         </h2>
-        <div><p class="font-neuton font-[400] text-xs"> Welcome to my Gallery!</p></div>
+        <div><p class="font-neuton font-[400] text-xs">{{ $user->profile->bio }}</p></div>
 
-        <a class="font-neuton font-[400] text-xs" href="https://www.instagram.com/bykaysart?igsh=MWw3ZXM4YW52dGJwZQ==" target="_blank">
-            www.instagram.com/bykaysart
-        </a>
+        <div>
+            <a class="font-neuton font-[400] text-xs" href="https://www.instagram.com/bykaysart?igsh=MWw3ZXM4YW52dGJwZQ==" target="_blank">
+                {{ $user->profile->url ?? 'N/A'}}
+            </a>
+        </div>
 
     </x-slot>
 

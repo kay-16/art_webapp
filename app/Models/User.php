@@ -46,4 +46,12 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    /**
+     * Get the Profile associated with the User
+     */
+    public function profile() // a Profile belongs to a User = inverse relationship to a Profile 
+    {
+        return $this->hasOne(Profile::class);
+    }
 }
