@@ -6,6 +6,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+
 
 class User extends Authenticatable
 {
@@ -50,8 +53,16 @@ class User extends Authenticatable
     /**
      * Get the Profile associated with the User
      */
-    public function profile() // a Profile belongs to a User = inverse relationship to a Profile 
+    public function profile(): HasOne // a Profile belongs to a User = inverse relationship with Profile 
     {
         return $this->hasOne(Profile::class);
+    }
+
+    /**
+     * Get the Posts associated with the User
+     */
+    public function posts(): HasMany // Posts belong to a User = inverse relationship with Post 
+    {
+        return $this->hasMany(Post::class);
     }
 }
