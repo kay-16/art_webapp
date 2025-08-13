@@ -27,7 +27,18 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([ // Validation Rules
+            'title' => 'required',
+            'year' => 'required',
+            'medium'=> 'required',
+            'art-description' => 'required',
+            'tags' => '',  // not required but still validated
+            'image' => ['required', 'image']
+
+        ]);
+        
+        return redirect('/posts');
+        dd($validatedData);
     }
 
     /**
