@@ -11,10 +11,6 @@
                     {{ __('Home') }}
                 </x-nav-link>
 
-                <x-nav-link :href="route('upload')" :active="request()->routeIs('upload')">
-                    {{ __('Upload') }}
-                </x-nav-link>
-
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
                         <button class="inline-flex font-neuton font-[300] text-white items-center text-xl hover:text-gray-400 focus:outline-none transition ease-in-out duration-150">
