@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Post extends Model
 {
+    protected $guarded = [];
     /**
      * Get the User that owns the Posts
      */
