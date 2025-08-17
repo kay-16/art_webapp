@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Post;
 
 class PostsController extends Controller
 {
@@ -26,19 +27,21 @@ class PostsController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {
-        $validatedData = $request->validate([ // Validation Rules
+    { // add art_description, tags, visibility to db later
+
+        $data = $request->validate([ // Validation Rules
             'title' => 'required',
             'year' => 'required',
+            'type' => 'required',
             'medium'=> 'required',
-            'art-description' => 'required',
-            'tags' => '',  // not required but still validated
-            'image' => ['required', 'image']
+            'art_description' => 'required',
+            'image' => ['required', 'image'],
 
         ]);
         
-        return redirect('/posts');
-        dd($validatedData);
+        auth()->user()->posts()->create($data); // Laravel adds the ID automatically due to the many-to-many rs of user and posts
+
+        dd($data);
     }
 
     /**
