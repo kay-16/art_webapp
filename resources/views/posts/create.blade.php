@@ -1,5 +1,5 @@
 <x-app-layout>
-    <form action="/posts" enctype="multipart/form-date" method="post">
+    <form action="/posts" enctype="multipart/form-data" method="POST">
         @csrf
 
         <x-slot name="header">
@@ -40,13 +40,13 @@
             
                 <!-- ART TYPE Dropdown -->
                 <div class="flex-col w-1/2 relative">
-                    <label for="art-type" class="tracking-widest font-nokora text-[#841A26] uppercase leading-tight font-[700] block text-sm mb-1">
+                    <label for="type" class="tracking-widest font-nokora text-[#841A26] uppercase leading-tight font-[700] block text-sm mb-1">
                         Type <span class="text-[#841A26]">*</span>
                     </label>
 
                     <select 
-                        id="art-type" 
-                        name="art-type" 
+                        id="type" 
+                        name="type" 
                         placeholder="Art Type" 
                         class="appearance-none w-full border-0 border-b border-[#841A26] bg-transparent py-1.5 pl-3 pr-10 text-base text-[#841A26] placeholder:text-[#841A26]/50 font-neuton focus:outline-none focus:ring-0" 
                     >
@@ -65,7 +65,7 @@
                     </div> -->
 
                      <!-- Error Message -->
-                    @error('art-type') 
+                    @error('type') 
                         <p class="alert alert-danger text-md text-[#841A26] bg-[#EAD8B4] px-3 py-1 mt-2 inline-block font-neuton">
                             {{ $message }}
                         </p>
@@ -144,8 +144,8 @@
                     </label>
                 
                     <textarea 
-                        name="art-description" 
-                        id="art-description" 
+                        name="art_description" 
+                        id="art_description" 
                         class="field-sizing-fixed w-100 appearance-none w-full border-0 border-b border-[#841A26] bg-transparent text-[#841A26] focus:outline-none focus:border-[#841A26] placeholder:text-[#841A26]/50 font-neuton" 
                         rows="2" 
                         placeholder="Describe your artpiece here..."
