@@ -20,7 +20,7 @@ class PostsController extends Controller
      */
     public function create()
     {
-        return view("posts.create");
+        return view("posts.create"); // return create view blade file
     }
 
     /**
@@ -59,7 +59,7 @@ class PostsController extends Controller
      */
     public function show(string $id)
     {
-        //
+        return view("posts.show"); // return show view blade file
     }
 
     /**
