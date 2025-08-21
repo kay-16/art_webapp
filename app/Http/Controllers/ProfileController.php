@@ -20,8 +20,8 @@ class ProfileController extends Controller
 
         $user = User::findOrFail($user);  // User = class from models User.php
 
-        return view('dashboard', [
-            'user' => $user         // user ang variable nga i-use to display data in views (dashboard.blade.php)
+        return view('profile/index', [
+            'user' => $user         // user ang variable nga i-use to display data in views (index.blade.php)
         ]);
     }
 
