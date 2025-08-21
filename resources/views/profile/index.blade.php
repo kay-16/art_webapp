@@ -9,6 +9,8 @@
 
         <div><p class="font-neuton font-[400] text-base">{{ $user->profile->bio }}</p></div>
 
+        <div><p class="font-neuton font-[400] text-base">{{ $user->posts->count() }} posts</p></div>
+
         <div>
             <a class="font-neuton font-[400] text-base underline underline-offset-1" href="https://www.instagram.com/bykaysart?igsh=MWw3ZXM4YW52dGJwZQ==" target="_blank">
                 {{ $user->profile->url ?? 'N/A'}}
@@ -21,7 +23,9 @@
         @foreach($user->posts as $post)
             
             <div class="flex flex-col items-start">
-                <img src="/storage/{{ $post->image }}" class="w-60" alt="">
+                <a href="/posts/{{ $post->id }}">
+                    <img src="/storage/{{ $post->image }}" class="w-60" alt="">
+                </a>
                 <p class="font-neuton font-[400] text-base mt-2"> {{ $post->title }}</p>
                 <p class="font-neuton font-[400] text-base"> {{ $post->year }}</p>
                 <p class="font-neuton font-[400] text-base"> {{ $post->type }}</p>
