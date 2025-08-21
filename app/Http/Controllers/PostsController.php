@@ -29,7 +29,7 @@ class PostsController extends Controller
     public function store(Request $request)
     { // add art_description, tags, visibility to db later
 
-        $data = $request->validate([ // Validation Rules
+        $validatedData = $request->validate([ // Validation Rules
             'title' => 'required',
             'year' => 'required',
             'type' => 'required',
@@ -39,9 +39,19 @@ class PostsController extends Controller
 
         ]);
         
-        auth()->user()->posts()->create($data); // Laravel adds the ID automatically due to the many-to-many rs of user and posts
+        $imagePath = request('image')->store('uploads', 'public'); // returns file path
 
-        dd($data);
+        auth()->user()->posts()->create([ // Laravel adds the ID automatically due to the many-to-many rs of user and posts
+            'title' => $validatedData['title'],
+            'year' => $validatedData['year'],
+            'type' => $validatedData['type'],
+            'medium' => $validatedData['medium'],
+            'art_description' => $validatedData['art_description'],
+            'image' => $imagePath,
+        
+        ]); 
+
+        return redirect('/profile/' . auth()->user()->id);
     }
 
     /**
