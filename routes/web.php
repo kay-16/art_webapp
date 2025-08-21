@@ -10,7 +10,7 @@ Route::get('/', function () {
 
 Route::get('/profile/{user}', [ProfileController::class, 'show']);
 
-Route::resource('/posts', PostsController::class);  
+Route::resource('/posts', PostsController::class)->middleware('auth');
 
 Route::get('/dashboard', function () {
     return view('profile.index', ['user' => Auth::user()]);
