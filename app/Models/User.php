@@ -63,6 +63,6 @@ class User extends Authenticatable
      */
     public function posts(): HasMany // Posts belong to a User = inverse relationship with Post 
     {
-        return $this->hasMany(Post::class);
+        return $this->hasMany(Post::class)->orderBy('created_at', 'desc');
     }
 }
