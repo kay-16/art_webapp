@@ -57,9 +57,9 @@ class PostsController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(\App\Models\Post $post)
     {
-        return view("posts.show"); // return show view blade file
+        return view("posts.show", compact('post')); // return show view blade file
     }
 
     /**
