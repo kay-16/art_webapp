@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <!-- User profile -->
-        <div class="mt-10 ml-20 mr-16 flex gap-[13rem]">
+        <div class="mt-10 ml-20 mr-16 flex gap-[9rem]">
             <!-- Profile picture  -->
             <div class="w-[18rem] h-[18rem] rounded-full bg-[#E0D9AB]"></div>
 
@@ -25,13 +25,15 @@
                 <!-- More info of user -->
                 <div class="flex justify-between mt-3 max-w-xl">
                     <!-- Bio -->
+                     
                     <p class="font-neuton font-[400] text-base">{{ $user->profile->bio }}</p>   
+        
 
                     <!-- Social links -->
-                    <div class="flex flex-col items-end gap-1">
+                    <div class="flex flex-col gap-1 ml-auto">
                         <a href="{{ $user->profile->url ?? '#'}}"
                             target="_blank"
-                            class="items-centerborder-4 bg-[#841A26] border-none px-7 py-[0.8px] text-lg text-[#FEFBDC]"> 
+                            class="items-center border-4 bg-[#841A26] border-none px-7 py-[0.8px] text-lg text-[#FEFBDC]"> 
                             Socials
                         </a>
                     </div> 
@@ -40,9 +42,9 @@
         </div>
     </x-slot>
 
+    <!-- Display each posts with post details  -->
     <div class="mt-[7rem] grid grid-cols-4 gap-4 max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 border-t-2 border-[#841A26]">
         @foreach($user->posts as $post)
-            
             <div class="flex flex-col items-start">
                 <a href="/posts/{{ $post->id }}">
                     <img src="/storage/{{ $post->image }}" class="w-60" alt="">
